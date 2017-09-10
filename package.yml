@@ -1,0 +1,9 @@
+package: errormail
+version: '1.0.0'
+author: Friends Of REDAXO
+supportpage: github.com/FriendsOfREDAXO/errormail
+
+page:
+    title: 'translate:title'
+    perm: errormail[]
+    pjax: true

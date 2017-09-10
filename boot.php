@@ -1,6 +1,6 @@
 <?php
 	if (!rex::isBackend()) {
-		rex_extension::register('OUTPUT_FILTER', function (rex_extension_point $ep) {
+		rex_extension::register('RESPONSE_SHUTDOWN', function (rex_extension_point $ep) {
 			$logFile = rex_path::coreCache('system.log');
 			if ($file = new rex_log_file($logFile)) {
 				//Start  generate mailsubject
@@ -55,6 +55,6 @@
 					}
 				//End  send mail
 			}
-		}, rex_extension::LATE);
+		});
 	}
 ?>

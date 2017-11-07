@@ -1,13 +1,18 @@
 <?php
 	if (!rex::isBackend()) {
 		rex_extension::register('RESPONSE_SHUTDOWN', function (rex_extension_point $ep) {
+            $Addon = rex_addon::get('errormail');
 			$logFile = rex_path::coreCache('system.log');
-			if ($file = new rex_log_file($logFile)) {
+            $fileTime = filemtime($logFile);
+            $sendTime = $Addon->getConfig('last_log_file_send_time', 0);
+
+
+			if ($fileTime != $sendTime && $file = new rex_log_file($logFile)) {
 				//Start  generate mailsubject
 					$mailSubject = '';
 					$mailSubject .= rex::getServerName().' | system.log';
 				//End  generate mailsubject
-				
+
 				//Start - generate mailbody
 					$mailBody = '';
 					$mailBody .= '<table>';
@@ -49,9 +54,8 @@
 					
 					if ($mail->Send()) {
 						// close logger, to free remaining file-handles to syslog
-						// so we can safely delete the file
 						rex_logger::close();
-						rex_log_file::delete($logFile);
+                        $Addon->setConfig('last_log_file_send_time', $fileTime);
 					}
 				//End  send mail
 			}

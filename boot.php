@@ -2,12 +2,11 @@
 	if (!rex::isBackend()) {
 		rex_extension::register('RESPONSE_SHUTDOWN', function (rex_extension_point $ep) {
 			$logFile = rex_path::coreCache('system.log');
-			if ($file = new rex_log_file($logFile)) {
-				//Start  generate mailsubject
-					$mailSubject = '';
-					$mailSubject .= rex::getServerName().' | system.log';
-				//End  generate mailsubject
-				
+            $fileTime = filemtime($logFile);
+            $sendTime = $this->getConfig('last_log_file_send_time', 0);
+
+
+			if ($fileTime != $sendTime && $file = new rex_log_file($logFile)) {
 				//Start - generate mailbody
 					$mailBody = '';
 					$mailBody .= '<table>';
@@ -41,17 +40,16 @@
 				
 				//Start  send mail
 					$mail = new rex_mailer();
-					$mail->Subject = $mailSubject;
+					$mail->Subject = rex::getServerName().' | system.log';
 					$mail->Body    = $mailBody;
 					$mail->AltBody = strip_tags($mailBody);
 					$mail->setFrom(rex::getErrorEmail(), 'REDAXO Errormail');
 					$mail->addAddress(rex::getErrorEmail());
-					
+                    $this->setConfig('last_log_file_send_time', $fileTime);
+
 					if ($mail->Send()) {
 						// close logger, to free remaining file-handles to syslog
-						// so we can safely delete the file
 						rex_logger::close();
-						rex_log_file::delete($logFile);
 					}
 				//End  send mail
 			}

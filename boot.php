@@ -1,7 +1,7 @@
 <?php
 	if (!rex::isBackend()) {
 		rex_extension::register('RESPONSE_SHUTDOWN', function (rex_extension_point $ep) {
-			$logFile = rex_path::coreCache('system.log');
+			$logFile = rex_path::coreData('system.log');
             $fileTime = filemtime($logFile);
             $sendTime = $this->getConfig('last_log_file_send_time', 0);
 

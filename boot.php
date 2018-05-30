@@ -7,7 +7,7 @@ if (!rex::isBackend()) {
         $fileTime = filemtime($logFile);
         $sendTime = $this->getConfig('last_log_file_send_time', 0);
         $timediff = $fileTime - $sendTime;
-        if (filesize($logFile) > 0 && $timediff  > 9 && $file = new rex_log_file($logFile)) {
+        if (filesize($logFile) > 0 && $timediff  > 900 && $file = new rex_log_file($logFile)) {
             //Start - generate mailbody
             $mailBody = '';
             $mailBody .= '<table>';

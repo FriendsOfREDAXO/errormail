@@ -2,3 +2,6 @@ package: errormail
 version: '1.0.0'
 author: Friends Of REDAXO
 supportpage: github.com/FriendsOfREDAXO/errormail
+
+requires:
+    redaxo: '^5.5'

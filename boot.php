@@ -1,14 +1,14 @@
 <?php
 	if (!rex::isBackend()) {
-		rex_extension::register('RESPONSE_SHUTDOWN', function (rex_extension_point $ep) {
-			$logFile = rex_path::coreData('system.log');
+
+        rex_extension::register('RESPONSE_SHUTDOWN', function (rex_extension_point $ep) {
+	    $logFile = rex_path::coreData('system.log');
             $fileTime = filemtime($logFile);
             $sendTime = $this->getConfig('last_log_file_send_time', 0);
-
-
-			if ($fileTime != $sendTime && $file = new rex_log_file($logFile)) {
+            $timediff = $fileTime - $sendTime;
+			if ($timediff  > 900 && $file = new rex_log_file($logFile)) {
 				//Start - generate mailbody
-					$mailBody = '';
+					$mailBody =  $timediff;
 					$mailBody .= '<table>';
 					$mailBody .= '	<thead>';
 					$mailBody .= '		<tr>';
@@ -20,11 +20,11 @@
 					$mailBody .= '		</tr>';
 					$mailBody .= '	</thead>';
 					$mailBody .= '	<tbody>';
-					
+
 					foreach (new LimitIterator($file, 0, 30) as $entry) {
 						/* @var rex_log_entry $entry */
 						$data = $entry->getData();
-						
+
 						$mailBody .= '		<tr>';
 						$mailBody .= '			<td>' . $entry->getTimestamp('%d.%m.%Y %H:%M:%S') . '</td>';
 						$mailBody .= '			<td>' . $data[0] . '</td>';
@@ -33,11 +33,11 @@
 						$mailBody .= '			<td>' . (isset($data[3]) ? $data[3] : '') . '</td>';
 						$mailBody .= '		</tr>';
 					}
-					
+
 					$mailBody .= '	</tbody>';
 					$mailBody .= '</table>';
 				//End - generate mailbody
-				
+
 				//Start  send mail
 					$mail = new rex_mailer();
 					$mail->Subject = rex::getServerName().' | system.log';

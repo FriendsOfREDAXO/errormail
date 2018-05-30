@@ -9,7 +9,7 @@ if (!rex::isBackend()) {
         $timediff = $fileTime - $sendTime;
         if ($timediff > 900 && $file = new rex_log_file($logFile)) {
             //Start - generate mailbody
-            $mailBody = $timediff;
+            $mailBody = '';
             $mailBody .= '<table>';
             $mailBody .= '    <thead>';
             $mailBody .= '        <tr>';
@@ -25,7 +25,6 @@ if (!rex::isBackend()) {
             foreach (new LimitIterator($file, 0, 30) as $entry) {
                 /* @var rex_log_entry $entry */
                 $data = $entry->getData();
-                
                 $mailBody .= '        <tr>';
                 $mailBody .= '            <td>' . $entry->getTimestamp('%d.%m.%Y %H:%M:%S') . '</td>';
                 $mailBody .= '            <td>' . $data[0] . '</td>';

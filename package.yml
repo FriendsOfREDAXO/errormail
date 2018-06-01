@@ -1,7 +1,9 @@
 package: errormail
-version: '1.0.1'
+version: '1.0.2'
 author: Friends Of REDAXO
 supportpage: github.com/FriendsOfREDAXO/errormail
 
 requires:
-    redaxo: '^5.5'
+    packages:
+        phpmailer: '^2.0.0'
+    redaxo: '^5.5.0'

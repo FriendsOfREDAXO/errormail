@@ -1,5 +1,15 @@
 # errormail
-🐣 Verschickt den system.log an die Error-Emailadresse
+
+errormail versendet den system.log wenn es im Log Exceptions, Errors und eigene logevents findet per E-Mail. 
+Die Zusendung erfolgt im 15 Minuten-Abstand an die im System hinterlegte Fehleradresse. 
+
+Eigene Events können den Versand ebenso auslösen dazu sollte man im Log den Event als Typ: logevent ablegen. 
+`rex_logger::factory()->log('logevent', 'Mein Text zum Event');`
+
+### Installation
+- Benötigt konfigurierten PHPMAiler
+- Einfach installieren
+- Keine Konfiguration erforderlich
 
 ### Bugtracker
 

@@ -7,11 +7,11 @@ Du hast einen Fehler gefunden oder ein nettes Feature parat? [Lege ein Issue an]
 
 ### Changelog
 
-siehe [CHANGELOG.md](https://github.com/FriendsOfREDAXO/errormail/CHANGELOG.md)
+siehe [CHANGELOG.md](https://github.com/FriendsOfREDAXO/errormail/blob/master/CHANGELOG.md)
 
 ### Lizenz
 
-siehe [LICENSE](https://github.com/FriendsOfREDAXO/quick_navigation/blob/master/LICENSE)
+siehe [LICENSE](https://github.com/FriendsOfREDAXO/errormail/blob/master/LICENSE)
 
 
 ### Autor

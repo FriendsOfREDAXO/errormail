@@ -59,7 +59,7 @@ if (!rex::isBackend()) {
                 $mailBody .= '            <td>' . (isset($data[3]) ? $data[3] : '') . '</td>';
                 $mailBody .= '        </tr>';
             }
-            // check if fatal error occured
+            // check if logevent occured then send mail
             if ($logevent == true) {
                 $mailBody .= '    </tbody>';
                 $mailBody .= '</table>';

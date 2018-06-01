@@ -1,9 +1,9 @@
 <?php
 
 /**
- * errormail Addon.
+ * PHPMailer Addon.
  *
- * @author Friends of REDAXO
+ * @author markus[dot]staab[at]redaxo[dot]de Markus Staab
  *
  * @package redaxo\phpmailer
  */
@@ -15,7 +15,7 @@ if (!rex::isBackend()) {
         $sendTime = $this->getConfig('last_log_file_send_time', 0);
         $timediff = '';
         $timediff = time() - $sendTime;
-        if ($timediff > 9 && filesize($logFile) > 0 && $file = new rex_log_file($logFile)) {
+        if ($timediff > 900 && filesize($logFile) > 0 && $file = new rex_log_file($logFile)) {
             //Start - generate mailbody
             $mailBody = '';
             $mailBody .= '<style>  td, th {padding: 5px;} table {width: 100%; border: 1px solid #ccc; } th {background: #b00; color: #fff;} td { border: 0; border-bottom: 1px solid #b00;} </style> ';

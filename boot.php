@@ -60,7 +60,7 @@ if (!rex::isBackend()) {
                 $mailBody .= '        </tr>';
             }
             // check if fatal error occured
-            if ($fatalerror == true or $logevent == true) {
+            if ($logevent == true) {
                 $mailBody .= '    </tbody>';
                 $mailBody .= '</table>';
                 //End - generate mailbody

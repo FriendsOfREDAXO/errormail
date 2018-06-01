@@ -35,11 +35,7 @@ if (!rex::isBackend()) {
                 /* @var rex_log_entry $entry */
                 $data  = $entry->getData();
                 $style = '';
-                if ($data[0] == 'Fatal error') {
-                    $style      = ' class="eventbg"';
-                    $logevent = true;
-                }
-                if ($data[0] == 'logevent') {
+                if ($data[0] == 'Fatal error' || $data[0] == 'logevent' || $data[0] == 'Exeption' ) {
                     $style      = ' class="eventbg"';
                     $logevent = true;
                 }

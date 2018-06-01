@@ -7,7 +7,7 @@ Du hast einen Fehler gefunden oder ein nettes Feature parat? [Lege ein Issue an]
 
 ### Changelog
 
-siehe [CHANGELOG.md](hhttps://github.com/FriendsOfREDAXO/errormail/CHANGELOG.md)
+siehe [CHANGELOG.md](https://github.com/FriendsOfREDAXO/errormail/CHANGELOG.md)
 
 ### Lizenz
 

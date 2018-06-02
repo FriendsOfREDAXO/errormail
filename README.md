@@ -1,6 +1,6 @@
 # errormail
 
-errormail versendet deeinen Auszug des system.log, wenn es Exceptions, Errors und eigene logevents findet. 
+errormail versendet einen Auszug des system.log, wenn es Exceptions, Errors und eigene logevents findet. 
 Der Check und ggf. Zusendung erfolgt mindestens im 15 oder 30 Minuten-Abstand um Massenmailings zu verhindern. Empfänger ist die im System hinterlegte Fehleradresse. 
 
 Eigene Events können den Versand ebenso auslösen dazu sollte man im Log den Event als Typ: logevent ablegen. 
@@ -8,12 +8,12 @@ Eigene Events können den Versand ebenso auslösen dazu sollte man im Log den Ev
 
 ### Installation
 - Benötigt konfigurierten PHPMAiler
-- Installation erfolgt über den nstaller
+- Installation erfolgt über den Installer
 - Die Konfiguration findet man in den Systemeinstellungen
 
 ### Bugtracker
 
-Du hast einen Fehler gefunden oder ein nettes Feature parat? [Lege ein Issue an](https://github.com/FriendsOfREDAXO/errormail/issues). Bevor du ein neues Issue erstellts, suche bitte ob bereits eines mit deinem Anliegen existiert und lese die [Issue Guidelines (englisch)](https://github.com/necolas/issue-guidelines) von [Nicolas Gallagher](https://github.com/necolas/).
+Du hast einen Fehler gefunden oder ein nettes Feature parat? [Lege ein Issue an](https://github.com/FriendsOfREDAXO/errormail/issues). Bevor du ein neues Issue erstellst, suche bitte ob bereits eines mit deinem Anliegen existiert und lese die [Issue Guidelines (englisch)](https://github.com/necolas/issue-guidelines) von [Nicolas Gallagher](https://github.com/necolas/).
 
 ### Changelog
 

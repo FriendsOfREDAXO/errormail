@@ -1,4 +1,9 @@
+
 <?php
+
+if (!$this->hasConfig('errormail_intval')) {
+        $this->setConfig('errormail_intval', 0);
+    }
 
 /**
  * errormail Addon.
@@ -7,7 +12,7 @@
  *
  */
 
-if (!rex::isBackend()) {
+if (!rex::isBackend() && $this->getConfig('errormail_intval') != 0) {
     rex_extension::register('RESPONSE_SHUTDOWN', function(rex_extension_point $ep)
     {
         $logFile    = rex_path::coreData('system.log');
@@ -82,3 +87,9 @@ if (!rex::isBackend()) {
         }
     });
 }
+
+
+    if (rex_be_controller::getCurrentPagePart(1) == 'system') {
+        rex_system_setting::register(new rex_system_setting_errormail_intval('errormail_intval'));
+
+    }

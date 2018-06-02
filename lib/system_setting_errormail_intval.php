@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Class for the start_article_id and notfound_article_id settings.
+ * Class for the errormail setting to show in settings.
  *
- * @author gharlan
+ * @author Thomas Skerbis
  *
- * @package redaxo\structure
+ * @package redaxo\errormail
  *
  * @internal
  */

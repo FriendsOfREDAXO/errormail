@@ -8,7 +8,7 @@ Eigene Events können den Versand ebenso auslösen dazu sollte man im Log den Ev
 
 ### Installation
 - Benötigt konfigurierten PHPMAiler
-- Einfach installieren
+- Installation erfolgt über den nstaller
 - Die Konfiguration findet man in den Systemeinstellungen
 
 ### Bugtracker

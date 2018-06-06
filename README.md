@@ -1,7 +1,7 @@
 # errormail
 
 errormail versendet einen Auszug des system.log, wenn es Exceptions, Errors und eigene logevents findet. 
-Der Check und ggf. Zusendung erfolgt mindestens im 15 oder 30 Minuten-Abstand um Massenmailings zu verhindern. Empfänger ist die im System hinterlegte Fehleradresse. 
+Der Check und ggf. Zusendung erfolgt erst ab der 15 oder 30 Minute nach der letzen MAIL, um Massenmailings zu verhindern. Empfänger ist die im System hinterlegte Fehleradresse. 
 
 Eigene Events können den Versand ebenso auslösen dazu sollte man im Log den Event als Typ: logevent ablegen. 
 `rex_logger::factory()->log('logevent', 'Mein Text zum Event');`

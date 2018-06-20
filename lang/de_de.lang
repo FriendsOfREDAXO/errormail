@@ -1,4 +1,0 @@
-system_setting_errormail_intval = Errormails senden
-errormail_disabled = deaktiviert
-errormail_15min = 15 Minuten Check-Interval
-errormail_30min = 30 Minuten Check-Interval

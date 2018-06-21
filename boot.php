@@ -21,7 +21,7 @@ if (!rex::isBackend() && $this->getConfig('errormail_intval') != 0) {
         $fatalerror = false;
         $logevent = false;
         $timediff   = time() - $sendTime;
-        if ($timediff > 900 && filesize($logFile) > 0 && $file = new rex_log_file($logFile)) {
+        if ($timediff > $this->getConfig('errormail_intval') && filesize($logFile) > 0 && $file = new rex_log_file($logFile)) {
             //Start - generate mailbody
             $mailBody  = '<h2>REDAXO errormail</h2>';
             $mailBody .= '<br>To disable these messages go to system settings of <strong>'. rex::getServerName() .'</strong><br><hr>';    

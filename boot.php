@@ -19,7 +19,7 @@ if (!rex::isBackend() && $this->getConfig('errormail_intval') != 0) {
         $fileTime   = filemtime($logFile);
         $timediff   = '';
         $fatalerror = false;
-        $logevent = false;
+        $logevent   = false;
         $timediff   = time() - $sendTime;
         if ($timediff > $this->getConfig('errormail_intval') && filesize($logFile) > 0 && $file = new rex_log_file($logFile)) {
             //Start - generate mailbody

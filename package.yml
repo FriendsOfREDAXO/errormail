@@ -6,4 +6,4 @@ supportpage: github.com/FriendsOfREDAXO/errormail
 requires:
     packages:
         phpmailer: '^2.0.0'
-    redaxo: '>=5.5.0, <5.7.0'
+    redaxo: '>=5.5.0, <5.7.0-dev'

@@ -1,3 +1,6 @@
+## 2.0.2
+- disables installation on REDAXO 5.7 and higher
+
 ## 2.0.0
 - Interval 15 or 30 minutes
 - Settings integrated in system settings

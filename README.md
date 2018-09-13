@@ -1,5 +1,7 @@
 # errormail
 
+⚠️ Entwicklung eingestellt: Das AddOn wurde in das [PHPMailer-AddOn] (https://github.com/redaxo/redaxo/tree/master/redaxo/src/addons/phpmailer) integriert und wird an dieser Stelle nicht länger gepflegt. / Deprecated: AddOn has been merged into the [PHPMailer-AddOn] (https://github.com/redaxo/redaxo/tree/master/redaxo/src/addons/phpmailer)  and won’t be maintained any longer.
+
 errormail versendet einen Auszug des system.log, wenn es Exceptions, Errors und eigene logevents findet. 
 Der Check und ggf. Zusendung erfolgt erst ab der 15 oder 30 Minute nach der letzen MAIL, um Massenmailings zu verhindern. Empfänger ist die im System hinterlegte Fehleradresse. 
 
